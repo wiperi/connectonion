@@ -25,7 +25,7 @@
 ## 4. React Native Platform Adapters
 
 - [ ] 4.1 Add a React Native-safe connectonion-ts entrypoint that exports the session core and RN adapter factory without pulling web-only or Node-only modules.
-- [ ] 4.2 Implement React Native WebSocket transport using the platform WebSocket implementation.
+- [x] 4.2 Implement React Native WebSocket transport using the platform WebSocket implementation.
 - [ ] 4.3 Implement iOS secure key storage adapter for Ed25519 identity creation, loading, and signing, keeping private keys out of ordinary session persistence.
 - [ ] 4.4 Implement React Native session repository using AsyncStorage or SQLite behind the `SessionRepository` interface.
 - [ ] 4.5 Implement React Native app lifecycle adapter for foreground, background, and reconnect triggers.
@@ -34,27 +34,27 @@
 
 ## 5. React Native iOS App
 
-- [ ] 5.1 Create the React Native iOS app/package or example workspace in the agreed repository location.
-- [ ] 5.2 Add app shell navigation for agent selection, conversation list, active chat, and settings or identity display.
-- [ ] 5.3 Implement conversation create, select, delete, title, persistence, and restore behavior.
-- [ ] 5.4 Implement the chat message list for user, agent, thinking, tool_call, intent, eval, compact, tool_blocked, files_received, onboard_success, and error-visible states.
-- [ ] 5.5 Implement chat input with text send, disabled/working state, elapsed-time or progress affordance, and duplicate-send protection.
-- [ ] 5.6 Implement image and file attachment selection, preview, normalization, and send integration.
-- [ ] 5.7 Implement approval mode controls for safe, plan, accept_edits, and ulw with configurable turn budget.
+- [x] 5.1 Create the React Native iOS app/package or example workspace in the agreed repository location.
+- [x] 5.2 Add app shell navigation for agent selection, conversation list, active chat, and settings or identity display.
+- [x] 5.3 Implement conversation create, select, delete, title, persistence, and restore behavior.
+- [x] 5.4 Implement the chat message list for user, agent, thinking, tool_call, intent, eval, compact, tool_blocked, files_received, onboard_success, and error-visible states.
+- [x] 5.5 Implement chat input with text send, disabled/working state, elapsed-time or progress affordance, and duplicate-send protection.
+- [x] 5.6 Implement image and file attachment selection, preview, normalization, and send integration.
+- [x] 5.7 Implement approval mode controls for safe, plan, accept_edits, and ulw with configurable turn budget.
 
 ## 6. Human Gate UI
 
-- [ ] 6.1 Implement ask_user UI with text input, options, multi-select, optional fields, and ASK_USER_RESPONSE dispatch.
-- [ ] 6.2 Implement approval_needed UI with tool name, arguments, description, batch remaining data, approve once, approve session, and reject actions.
-- [ ] 6.3 Implement onboard_required UI for invite-code and payment methods with signed ONBOARD_SUBMIT dispatch.
-- [ ] 6.4 Implement plan_review UI with plan content rendering and PLAN_REVIEW_RESPONSE dispatch.
-- [ ] 6.5 Implement ulw_turns_reached UI with turns used, max turns, continue action, and mode-switch action.
+- [x] 6.1 Implement ask_user UI with text input, options, multi-select, optional fields, and ASK_USER_RESPONSE dispatch.
+- [x] 6.2 Implement approval_needed UI with tool name, arguments, description, batch remaining data, approve once, approve session, and reject actions.
+- [x] 6.3 Implement onboard_required UI for invite-code and payment methods with signed ONBOARD_SUBMIT dispatch.
+- [x] 6.4 Implement plan_review UI with plan content rendering and PLAN_REVIEW_RESPONSE dispatch.
+- [x] 6.5 Implement ulw_turns_reached UI with turns used, max turns, continue action, and mode-switch action.
 
 ## 7. Mobile Lifecycle and Verification
 
-- [ ] 7.1 Persist the latest snapshot before backgrounding and reconnect or check session status on foreground.
-- [ ] 7.2 Verify first launch creates an identity, subsequent launches reuse the same address, and private keys are not written to session or conversation storage.
-- [ ] 7.3 Add simulator or integration smoke test for sending a prompt to a hosted agent and receiving an agent response.
+- [x] 7.1 Persist the latest snapshot before backgrounding and reconnect or check session status on foreground.
+- [x] 7.2 Verify first launch creates an identity, subsequent launches reuse the same address, and private keys are not written to session or conversation storage.
+- [x] 7.3 Add simulator or integration smoke test for sending a prompt to a hosted agent and receiving an agent response.
 - [ ] 7.4 Add simulator or mocked integration coverage for approvals, ask_user, onboarding, plan review, ULW pause, disconnect, reconnect, and app restart restore.
 - [ ] 7.5 Run connectonion-ts tests, oo-chat compatibility checks, React Native type checks, and iOS simulator smoke checks.
 - [ ] 7.6 Update developer documentation with the new session-core API, adapter responsibilities, RN setup commands, and known iOS lifecycle limits.
