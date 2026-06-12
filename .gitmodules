@@ -1,0 +1,6 @@
+[submodule "oo-chat"]
+	path = oo-chat
+	url = https://github.com/openonion/oo-chat.git
+[submodule "connectonion-ts"]
+	path = connectonion-ts
+	url = https://github.com/openonion/connectonion-ts.git

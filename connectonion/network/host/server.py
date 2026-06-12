@@ -26,6 +26,7 @@ don't interfere between concurrent requests.
 """
 
 import asyncio
+import io
 from functools import partial
 from pathlib import Path
 from typing import Callable, Union
@@ -59,6 +60,23 @@ from .http_router import (
     admin_admins_add_handler,
     admin_admins_remove_handler,
 )
+
+
+def _print_qr_code(console: Console, url: str, indent: str) -> None:
+    try:
+        import qrcode
+    except ImportError:
+        console.print(f"{indent}[dim]QR code unavailable: install qrcode[/dim]")
+        return
+
+    qr = qrcode.QRCode(border=1)
+    qr.add_data(url)
+    qr.make(fit=True)
+
+    output = io.StringIO()
+    qr.print_ascii(out=output, invert=True)
+    for line in output.getvalue().splitlines():
+        console.print(f"{indent}{line}")
 
 
 def _parse_trust_config(trust: Union[str, "Agent"]) -> dict | None:
@@ -210,6 +228,7 @@ def _print_host_banner(
     chat_url = f"https://chat.openonion.ai/{address}"
     console.print(f"{indent}[cyan]{address}[/cyan]")
     console.print(f"{indent}[link={chat_url}][dim]↳ chat.openonion.ai ↗[/dim][/link]")
+    _print_qr_code(console, chat_url, indent)
     console.print(f"{indent}{relay_status}")
     console.print()
 
