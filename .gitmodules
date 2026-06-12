@@ -4,3 +4,6 @@
 [submodule "connectonion-ts"]
 	path = connectonion-ts
 	url = https://github.com/openonion/connectonion-ts.git
+[submodule "examples/oo-chat-react-native-ios"]
+	path = examples/oo-chat-react-native-ios
+	url = https://github.com/wiperi/oo-chat-react-native-ios.git
